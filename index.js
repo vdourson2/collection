@@ -110,7 +110,7 @@ let cards = document.querySelector(".cards");
 songs.forEach(song => {
 
     let card = document.createElement("div");
-    card.classList.add('w-full','md:w-1/5','border-2','border-solid','shadow-[2px_2px_20px_1px_#00000024]')
+    card.classList.add('w-full', 'shadow-[2px_2px_20px_1px_#00000024]','md:w-[45%]', 'md:mb-10', 'lg:w-[23%]' )
     cards.appendChild(card);
 
         let picture = document.createElement("img");
@@ -119,39 +119,39 @@ songs.forEach(song => {
         card.appendChild(picture);
 
         let wrapContent = document.createElement("div");
-        wrapContent.classList.add('flex', 'flex-col', 'justify-between','h-60','m-5');
+        wrapContent.classList.add('flex', 'flex-col', 'justify-between','h-72','m-5');
         card.appendChild(wrapContent);
 
             let wrapStyle = document.createElement("div");
-            wrapStyle.classList.add('flex','gap-3');
+            wrapStyle.classList.add('flex','gap-2','flex-wrap');
             wrapContent.appendChild(wrapStyle);
 
             for (let st of song.style){
                 let style = document.createElement("div");
-                style.classList.add('bg-green-500', 'py-1','px-3','rounded-sm','text-white');
+                style.classList.add('bg-green-500', 'py-1','px-3','rounded','text-white');
                 wrapStyle.appendChild(style);
                 style.textContent = st;
             }
 
             let title = document.createElement("h2");
-            // title.classList.add('');
+            title.classList.add('uppercase','font-bold','text-2xl','tracking-wider');
             wrapContent.appendChild(title);
             title.textContent = song.name;
 
             let author = document.createElement("h3");
-            // author.classList.add('');
+            author.classList.add('text-gray-400','text-xl','font-bold');
             wrapContent.appendChild(author);
             author.textContent = song.group;
 
             let album = document.createElement("p");
-            // author.classList.add('');
+            album.classList.add('italic');
             wrapContent.appendChild(album);
             album.textContent = song.album;
 
             let spotify = document.createElement("a");
             // author.classList.add('');
-            wrapContent.appendChild(spotify);
             spotify.setAttribute('href', song.lien);
+            wrapContent.appendChild(spotify);
 
             let iconSpotify = document.createElement("img");
             iconSpotify.setAttribute('src','./assets/spotify.png');
