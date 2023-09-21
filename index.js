@@ -164,7 +164,7 @@ songs.forEach(song => {
                     spotify.appendChild(iconSpotify);
 
                 let suppress = document.createElement("img");
-                suppress.classList.add('w-6','h-6','hover:w-7','hover:h-7' );
+                suppress.classList.add('w-6','h-6','hover:scale-125','cursor-pointer','transition-transform' );
                 suppress.setAttribute('src','./assets/annuler.png');
                 wrapFooter.appendChild(suppress);
                 suppress.addEventListener('click',(e) => card.classList.add('hidden'));
