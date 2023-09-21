@@ -148,15 +148,24 @@ songs.forEach(song => {
             wrapContent.appendChild(album);
             album.textContent = song.album;
 
-            let spotify = document.createElement("a");
-            // author.classList.add('');
-            spotify.setAttribute('href', song.lien);
-            wrapContent.appendChild(spotify);
+            let wrapFooter = document.createElement("div");
+            wrapFooter.classList.add('flex', 'justify-between','items-center');
+            wrapFooter.setAttribute('src','./assets/bouton-supprimer.jpg');
+            wrapContent.appendChild(wrapFooter);
 
-            let iconSpotify = document.createElement("img");
-            iconSpotify.setAttribute('src','./assets/spotify.png');
-            iconSpotify.classList.add('w-10')
-            spotify.appendChild(iconSpotify);
+                let spotify = document.createElement("a");
+                // author.classList.add('');
+                spotify.setAttribute('href', song.lien);
+                wrapFooter.appendChild(spotify);
 
+                    let iconSpotify = document.createElement("img");
+                    iconSpotify.setAttribute('src','./assets/spotify.png');
+                    iconSpotify.classList.add('w-10')
+                    spotify.appendChild(iconSpotify);
 
+                let suppress = document.createElement("img");
+                suppress.classList.add('w-6','h-6','hover:w-7','hover:h-7' );
+                suppress.setAttribute('src','./assets/annuler.png');
+                wrapFooter.appendChild(suppress);
+                suppress.addEventListener('click',(e) => card.classList.add('hidden'));
 })
