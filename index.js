@@ -110,16 +110,16 @@ let cards = document.querySelector(".cards");
 songs.forEach(song => {
 
     let card = document.createElement("div");
-    card.classList.add('w-1/4')
+    card.classList.add('w-4/5','md:w-1/5')
     cards.appendChild(card);
 
         let picture = document.createElement("img");
-        // picture.classList.add('');
+        picture.classList.add('w-full');
         picture.setAttribute('src',song.picture);
         card.appendChild(picture);
 
         let wrapContent = document.createElement("div");
-        // wrapContent.classList.add('');
+        wrapContent.classList.add('flex');
         card.appendChild(wrapContent);
 
             let wrapStyle = document.createElement("div");
@@ -130,23 +130,32 @@ songs.forEach(song => {
                 let style = document.createElement("div");
                 // style.classList.add('');
                 wrapStyle.appendChild(style);
+                style.textContent = st;
             }
 
             let title = document.createElement("h2");
             // title.classList.add('');
             wrapContent.appendChild(title);
+            title.textContent = song.name;
 
             let author = document.createElement("h3");
             // author.classList.add('');
             wrapContent.appendChild(author);
+            author.textContent = song.group;
 
             let album = document.createElement("p");
             // author.classList.add('');
             wrapContent.appendChild(album);
+            album.textContent = song.album;
 
             let spotify = document.createElement("a");
             // author.classList.add('');
             wrapContent.appendChild(spotify);
+            spotify.setAttribute('hrf', song.lien);
+
+            let iconSpotify = document.createElement("img");
+            iconSpotify.setAttribute('src','./assets/spotify.png');
+            spotify.appendChild(iconSpotify);
 
 
 })

@@ -538,8 +538,28 @@ video {
   display: flex;
 }
 
-.flex-wrap {
-  flex-wrap: wrap;
+.w-4\/5 {
+  width: 80%;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.gap-5 {
+  gap: 1.25rem;
+}
+
+.gap-10 {
+  gap: 2.5rem;
 }
 
 .text-2xl {
@@ -548,3 +568,29 @@ video {
 }
 
 /*  npx tailwindcss -i ./css/style.css -o ./dist/style.css --watch  */
+
+@media (min-width: 768px) {
+  .md\:w-1\/5 {
+    width: 20%;
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
+  .md\:flex-wrap {
+    flex-wrap: wrap;
+  }
+
+  .md\:justify-start {
+    justify-content: flex-start;
+  }
+
+  .md\:justify-around {
+    justify-content: space-around;
+  }
+
+  .md\:gap-5 {
+    gap: 1.25rem;
+  }
+}
